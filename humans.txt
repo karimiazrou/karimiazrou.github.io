@@ -1,0 +1,11 @@
+/* TEAM */
+Maison : DR MULTISERVICES
+Contact : karimi@dr-multiservices.com
+Téléphone : +212 6 61 84 46 73
+Lieu : Marrakech, Maroc
+
+/* SITE */
+Langue : Français
+Fondation : 2005 — plus de 20 ans d'ingénierie du confort
+Logo : https://dr-multiservices.com/logo.png
+Standards : HTML5, schema.org HVACBusiness, llms.txt, site.webmanifest

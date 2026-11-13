@@ -1,0 +1,32 @@
+/* DR MULTISERVICES V4 — progressive enhancement, scoped styles */
+:root{--dr-gold:#d4af37;--dr-ink:#090a0a;--dr-white:#f7f5ee;--dr-muted:#aaa79a}
+/* No loader element is inserted into the SSR body: React hydration remains untouched. */
+html.dr-booting::before{content:"";position:fixed;inset:0;z-index:2147483000;background:radial-gradient(circle at 50% 35%,#28231a,#090909 75%);pointer-events:auto;animation:dr-reveal .25s ease-out both}
+html.dr-booting::after{content:"DR\A MULTISERVICES\A INGÉNIERIE · MARRAKECH";white-space:pre;text-align:center;position:fixed;z-index:2147483001;top:50%;left:50%;transform:translate(-50%,-50%);width:min(94vw,520px);padding:70px 12px 30px;background:radial-gradient(circle at 50% 20px,rgba(212,175,55,.18),transparent 48px),linear-gradient(90deg,transparent,#c9a846,transparent) center bottom/58% 2px no-repeat;font:600 clamp(18px,4vw,28px)/1.9 Georgia,serif;letter-spacing:.16em;color:#f7eed0;text-shadow:0 0 24px rgba(212,175,55,.28);pointer-events:none}
+@keyframes dr-reveal{from{opacity:0}to{opacity:1}}
+.dr-nav-progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:2147482999;pointer-events:none;background:linear-gradient(90deg,#af8420,#f2d674);box-shadow:0 0 14px #d4af37;opacity:0;transition:width .35s ease,opacity .2s ease}
+.dr-nav-progress[data-active="1"]{width:72%;opacity:1}
+.dr-photo-gallery{isolation:isolate;background:linear-gradient(165deg,#10100f,#171510 58%,#0b0b0b);color:#f6f4eb;border-block:1px solid rgba(212,175,55,.2);padding:clamp(45px,6vw,85px) max(18px,calc((100vw - 1320px)/2));font-family:Outfit,system-ui,sans-serif}
+.dr-photo-gallery *{box-sizing:border-box}
+.dr-gallery-head{display:flex;align-items:end;justify-content:space-between;gap:22px;margin-bottom:24px;flex-wrap:wrap}
+.dr-gallery-eyebrow{font-size:11px;color:#e8c965;letter-spacing:.25em;font-weight:700;text-transform:uppercase;margin:0 0 11px}
+.dr-photo-gallery h2{font:500 clamp(32px,4vw,49px)/1.04 'Cormorant Garamond',Georgia,serif;letter-spacing:-.02em;margin:0;color:#f8f5e9}
+.dr-gallery-subtitle{font-size:14px;color:#bcb7aa;line-height:1.65;max-width:470px;margin:0}
+.dr-gallery-grid{display:grid;grid-template-columns:1.45fr 1fr 1fr;gap:14px}
+.dr-gallery-card{position:relative;aspect-ratio:4 / 3;min-height:180px;overflow:hidden;border:1px solid rgba(212,175,55,.26);border-radius:15px;background:#26231d;padding:0;cursor:zoom-in;color:white;text-align:left;box-shadow:0 16px 36px rgba(0,0,0,.2)}
+.dr-gallery-card:first-child{aspect-ratio:1.4}
+.dr-gallery-card img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.8,.2,1),filter .5s ease;filter:saturate(.96)}
+.dr-gallery-card:hover img{transform:scale(1.045);filter:saturate(1.1)}
+.dr-gallery-caption{position:absolute;bottom:0;left:0;right:0;padding:35px 16px 16px;background:linear-gradient(0deg,rgba(0,0,0,.88),transparent);font-size:13px;line-height:1.4;font-weight:600;text-shadow:0 2px 5px #000}
+.dr-gallery-n{position:absolute;top:12px;left:12px;font-size:11px;color:#f8e6ac;letter-spacing:.12em;background:rgba(4,4,4,.65);border:1px solid rgba(212,175,55,.5);border-radius:50px;padding:5px 10px}
+.dr-gallery-foot{margin:16px 0 0;color:#a8a397;font-size:12px;line-height:1.5}
+.dr-gallery-card:focus-visible,.dr-lightbox-close:focus-visible{outline:3px solid #ffda63;outline-offset:3px}
+.dr-photo-lightbox{position:fixed;inset:0;max-width:none;max-height:none;width:100%;height:100%;padding:28px;background:rgba(5,5,5,.96);color:#faf7ed;border:none;box-sizing:border-box}
+.dr-photo-lightbox::backdrop{background:#030303dd}
+.dr-lightbox-body{min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px}
+.dr-photo-lightbox img{max-height:77vh;max-width:min(1100px,95vw);object-fit:contain;border:1px solid #655331;border-radius:9px}
+.dr-lightbox-caption{text-align:center;font:14px system-ui,sans-serif;color:#d1caba}
+.dr-lightbox-close{position:fixed;top:22px;right:22px;border:1px solid #907a43;background:#171612;color:#f8e8b5;border-radius:50px;padding:10px 16px;font:600 14px system-ui;cursor:pointer}
+@media(max-width:750px){.dr-gallery-grid{grid-template-columns:1fr 1fr}.dr-gallery-card:first-child{grid-column:span 2;aspect-ratio:16/10}.dr-gallery-card{min-height:130px}.dr-gallery-head{gap:10px}.dr-gallery-subtitle{max-width:100%}}
+@media(max-width:430px){.dr-gallery-grid{gap:10px}.dr-gallery-card{aspect-ratio:3/4;min-height:128px}.dr-gallery-caption{font-size:11px;padding:30px 12px 12px}}
+@media(prefers-reduced-motion:reduce){html.dr-booting::before{animation:none}.dr-nav-progress,.dr-gallery-card img{transition:none!important}}

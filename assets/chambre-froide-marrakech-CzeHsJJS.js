@@ -1,0 +1,1 @@
+import{P as e}from"./seo-6NWJUYzc.js";import{f as t}from"./index-BUcmBZDV.js";import{t as n}from"./seo-landing-OfGf_50X.js";var r=e(),i=()=>(0,r.jsx)(n,{page:t});export{i as component};
