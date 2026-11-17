@@ -166,7 +166,7 @@
     notice.setAttribute("aria-label", "Préférences de statistiques");
     notice.style.cssText = "position:fixed;bottom:12px;left:12px;right:12px;z-index:99999;max-width:520px;margin:auto;background:#151515;color:#f4f0e8;border:1px solid #d4af37;border-radius:12px;padding:15px 18px;box-shadow:0 8px 25px #0008;font:14px/1.5 system-ui,sans-serif";
     const text = document.createElement("p");
-    text.textContent = "Autorisez-vous les statistiques anonymisées pour améliorer ce site ? Aucun contenu des formulaires n'est transmis. Vous pouvez changer d'avis à tout moment.";
+    text.textContent = "Autorisez-vous des statistiques de fréquentation pour améliorer ce site ? Aucun contenu des formulaires n'est transmis. Vous pouvez changer d'avis à tout moment.";
     const row = document.createElement("div"); row.style.cssText = "display:flex;flex-wrap:wrap;gap:10px;margin-top:10px";
     function button(label, accept) {
       const b = document.createElement("button"); b.type = "button"; b.textContent = label;
