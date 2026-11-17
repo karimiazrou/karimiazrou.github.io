@@ -96,3 +96,24 @@
   observer.observe(document.body,{childList:true,subtree:true});
   document.addEventListener("click",e=>{if(e.target.closest?.("a[href]")&&!e.target.closest(".dr-photo-gallery"))setTimeout(schedule,450);});
 })();
+
+/* Optional PostHog integration — runtime config is empty on this branch,
+ * and SDK is requested only after the visitor explicitly accepts analytics. */
+(() => {
+  "use strict";
+  if (window.__DR_POSTHOG_V4_LOADER__) return;
+  window.__DR_POSTHOG_V4_LOADER__ = true;
+  const config = document.createElement("script");
+  config.src = "/assets/dr-posthog-config.js";
+  config.async = true;
+  config.onload = () => {
+    const c = window.DR_POSTHOG_CONFIG || {};
+    if (!/^phc_[A-Za-z0-9_-]+$/.test(String(c.token || "")) ||
+        c.host !== "https://eu.i.posthog.com") return;
+    const script = document.createElement("script");
+    script.src = "/assets/dr-posthog-v4.js";
+    script.async = true;
+    document.head.append(script);
+  };
+  document.head.append(config);
+})();
